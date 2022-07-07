@@ -23,8 +23,9 @@ public class BoardService {
 
 
     // 게시물 조회
-    public BoardDto getBoard(Integer cafeid, Integer categoryid) {
-        return (BoardDto) boardMapper.findByCafeidAndCategoryid(cafeid,categoryid).orElseThrow(IllegalArgumentException::new);
+    public List<BoardDto> getBoard(Integer cafeid, Integer categoryid) {
+        return (List<BoardDto>) boardMapper.findByCafeidAndCategoryid(cafeid,categoryid);
+        //.orElseThrow(IllegalArgumentException::new);
     }
 
     public BoardDto getBoard2(Integer cafeid, Integer categoryid, Integer Id) {

@@ -5,12 +5,13 @@ import org.apache.ibatis.annotations.Mapper;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
+import java.util.List;
 import java.util.Optional;
 
 @EnableJpaRepositories
 public interface BoardMapper extends JpaRepository<BoardDto, Integer>{
 
-    Optional<Object> findByCafeidAndCategoryid(Integer cafeid, Integer categoryid);
+    List<BoardDto> findByCafeidAndCategoryid(Integer cafeid, Integer categoryid);
 
     Optional<Object> findByCafeidAndCategoryidAndId(Integer cafeid, Integer categoryid, Integer Id);
 }

@@ -31,7 +31,7 @@ public class BoardController {
 
     // 게시판 조회
     @GetMapping("/{cafeid}/{categoryid}")
-    public BoardDto getBoard(@PathVariable Integer cafeid, @PathVariable Integer categoryid) {
+    public List<BoardDto> getBoard(@PathVariable Integer cafeid, @PathVariable Integer categoryid) {
         // 토큰에서 아이디 가져오기
         boardDto.setUserid(securityService.getIdAtToken());
         //boardrDto.setUsername(securityService.getIdAtToken());
